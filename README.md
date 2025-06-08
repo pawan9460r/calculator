@@ -1,1 +1,61 @@
-# calculator
+```python
+def calculator():
+    print("Simple Python Calculator")
+    print("-----------------------")
+    print("Operations available:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Exit")
+    
+    while True:
+        try:
+            # Get user input
+            choice = input("Enter operation (1/2/3/4/5): ")
+            
+            if choice == '5':
+                print("Goodbye!")
+                break
+                
+            if choice not in ('1', '2', '3', '4'):
+                print("Invalid input. Please try again.")
+                continue
+                
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+            
+            # Perform calculation
+            if choice == '1':
+                print(f"Result: {num1} + {num2} = {num1 + num2}")
+            elif choice == '2':
+                print(f"Result: {num1} - {num2} = {num1 - num2}")
+            elif choice == '3':
+                print(f"Result: {num1} * {num2} = {num1 * num2}")
+            elif choice == '4':
+                if num2 == 0:
+                    print("Error! Division by zero.")
+                else:
+                    print(f"Result: {num1} / {num2} = {num1 / num2}")
+                    
+        except ValueError:
+            print("Invalid input. Please enter numbers only.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+# Run the calculator
+calculator()
+```
+
+## Features:
+1. Basic arithmetic operations (+, -, *, /)
+2. Error handling for invalid inputs
+3. Division by zero protection
+4. Clean user interface
+
+## How to Use:
+1. Run the program
+2. Select an operation (1-4) or exit (5)
+3. Enter two numbers when prompted
+4. See the result
+5. Continue calculating or exit
